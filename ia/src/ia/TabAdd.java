@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -11,6 +12,8 @@ import javax.swing.JTextField;
 public class TabAdd extends JPanel {
 	private JTextField germanTF;
 	private JTextField englishTF;
+	JLabel myLabel;
+	JLabel ansLabel;
 	
 	public TabAdd(JTabbedPane tabbedPane) {
 		setLayout(null);
@@ -31,6 +34,7 @@ public class TabAdd extends JPanel {
 				String germanText = germanTF.getText();
 				String englishText = englishTF.getText();
 				Entry entry = new Entry (germanText, englishText);
+				ansLabel.setText("");
 			}
 		});
 		btnNewButton.setBounds(357, 352, 117, 29);

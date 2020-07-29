@@ -45,15 +45,14 @@ public class Tab1 extends JPanel {
 		this.add(btnTable);
 
 		JButton btnRevealAnswer = new JButton("Reveal Answer");
-		btnRevealAnswer.setBounds(449, 400, 155, 23);
+		btnRevealAnswer.setBounds(400, 400, 155, 23);
 		this.add(btnRevealAnswer);
 
 		JButton nextQ = new JButton("next Question");
-		nextQ.setLocation(285, 480);
-		nextQ.setSize(200,30);
+		nextQ.setBounds(600, 400, 175, 23);
 		this.add(nextQ);
 
-		myLabel = new JLabel(Ia.dictionary.getCurrentEntry());
+		myLabel = new JLabel(Ia.dictionary.getCurrentEntry().getAcronym());
 		myLabel.setFont(new Font("Times New Roman", Font.PLAIN, 36));
 		myLabel.setLocation(212,109);
 		myLabel.setSize(446,176);
@@ -65,14 +64,22 @@ public class Tab1 extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				Entry entry = Ia.dictionary.getCurrentEntry();
 				String userAns = entryField.getText();
-				if(entry.getAnswer().contentEquals(userAns)) {
+				if(Ia.dictionary.getCurrentEntry().getAnswer().contentEquals(userAns)) {
 					ansLabel.setText("correct");
-
 				} else {
 					ansLabel.setText("incorrect");
-					ansLabel.setText("Correct answer:" + entry.getAnswer());
-					System.out.println(entry.getAnswer() + "." + userAns);
+					ansLabel.setText("Correct answer:" + Ia.dictionary.getCurrentEntry().getAnswer());
+					System.out.println(Ia.dictionary.getCurrentEntry().getAnswer() + "." + userAns);
 				} 
+			}
+		});
+		
+		nextQ.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				entry = Ia.dictionary.nextAcro();
+				myLabel.setText(Ia.dictionary.getCurrentEntry().getAcronym());
+				ansLabel.setText("");
 			}
 		});
 	}
