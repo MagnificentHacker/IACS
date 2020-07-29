@@ -34,7 +34,7 @@ public class TabAdd extends JPanel {
 				String germanText = germanTF.getText();
 				String englishText = englishTF.getText();
 				Entry entry = new Entry (germanText, englishText);
-				ansLabel.setText("");
+				Ia.dictionary.nextAcro().getAcronym();
 			}
 		});
 		btnNewButton.setBounds(357, 352, 117, 29);
