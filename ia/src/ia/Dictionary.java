@@ -30,7 +30,8 @@ public class Dictionary {
 				String definition = line.substring(commaIndex + 1).trim();
 				entries[numEntries++] = new Entry(acronym, definition);
 				
-			
+				
+				
 			}
 		} catch(IOException e) {
 			e.printStackTrace();

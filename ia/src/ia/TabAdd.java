@@ -35,6 +35,8 @@ public class TabAdd extends JPanel {
 		JButton btnNewButton = new JButton("Add");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				englishTF.setText("");
+				germanTF.setText("");
 				String germanText = germanTF.getText();
 				String englishText = englishTF.getText();
 				Entry entry = new Entry (germanText, englishText);

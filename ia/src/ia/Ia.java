@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+import practiceia2.TableData;
+
 public class Ia extends JFrame  {
 
 	public static Dictionary dictionary = new Dictionary();
@@ -43,15 +45,21 @@ public class Ia extends JFrame  {
 		getContentPane().add(tabbedPane);
 		setVisible(true);
 		tabbedPane.setBackground(new Color(255, 218, 185));
+	
+		TabTbl tableData = new TabTbl();
+		
 		TabMenu tabmenu = new TabMenu(tabbedPane);
 		Tab1 tab1 = new Tab1(tabbedPane);
 		TabAdd tabAdd = new TabAdd(tabbedPane);
 		TabAbout tabAbt = new TabAbout(tabbedPane);
-
+		TabTable tabTbl = new TabTable(tabbedPane, tableData, tableData);
+		
+		
 		tabbedPane.addTab("Menu",tabmenu);
 		tabbedPane.addTab("Vocab",tab1);
 		tabbedPane.addTab("Add", tabAdd);
 		tabbedPane.addTab("About", tabAbt);
+		tabbedPane.addTab("Table", tabTbl);
 		tab1.setLayout(null);
 		tabmenu.setLayout(null);
 		tabAdd.setLayout(null);
