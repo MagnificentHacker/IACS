@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import java.awt.Color;
 
 public class Tab1 extends JPanel {
 
@@ -21,6 +22,7 @@ public class Tab1 extends JPanel {
 	Entry entry;
 
 	public Tab1(JTabbedPane tabbedPane) {
+		setBackground(new Color(255, 160, 122));
 
 		entryField = new JTextField();
 		entryField.setBounds(212, 226, 446, 28);
@@ -73,13 +75,18 @@ public class Tab1 extends JPanel {
 				} 
 			}
 		});
-		
+
 		nextQ.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				entryField.setText("");
 				entry = Ia.dictionary.nextAcro();
-				myLabel.setText(Ia.dictionary.getCurrentEntry().getAcronym());
-				ansLabel.setText("");
+				if (entry == null) {
+					System.out.println("The quiz is over!");
+				} else {
+					myLabel.setText(Ia.dictionary.getCurrentEntry().getAcronym());
+					ansLabel.setText("");
+				}
 			}
 		});
 	}

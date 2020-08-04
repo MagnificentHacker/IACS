@@ -39,7 +39,7 @@ public class Dictionary {
 
 	Entry nextAcro() {
 		nextIndex = nextIndex + 1;
-		return entries[nextIndex-1];
+		return entries[nextIndex];
 	}
 	
 	public void add(Entry entry) { 
