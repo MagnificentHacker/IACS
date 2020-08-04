@@ -1,5 +1,6 @@
 package ia;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,10 +14,10 @@ public class TabAbout extends JPanel {
 
 
 	public TabAbout(JTabbedPane tabbedPane) {
+			setBackground(new Color(255, 218, 185));
+			
 			setLayout(null);
 
-		
-			
 			JLabel labelabt = new JLabel("About");
 			labelabt.setFont(new Font("Times New Roman", Font.BOLD, 31));
 			labelabt.setBounds(330, 24, 103, 46);

@@ -16,9 +16,7 @@ import javax.swing.border.EmptyBorder;
 
 public class Ia extends JFrame  {
 
-	public static Color PEACH = new Color(255, 218, 185);
 	public static Dictionary dictionary = new Dictionary();
-	private static final int MAX = 5;
 	private final JTabbedPane pane = new JTabbedPane();
 	JTextField word;
 	static JPanel contentPane;
@@ -44,7 +42,7 @@ public class Ia extends JFrame  {
 		tabbedPane.setBounds(100, 100, 822, 528);
 		getContentPane().add(tabbedPane);
 		setVisible(true);
-		tabbedPane.setBackground(PEACH);
+		tabbedPane.setBackground(new Color(255, 218, 185));
 		TabMenu tabmenu = new TabMenu(tabbedPane);
 		Tab1 tab1 = new Tab1(tabbedPane);
 		TabAdd tabAdd = new TabAdd(tabbedPane);

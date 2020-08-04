@@ -3,6 +3,8 @@ package ia;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
+
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -12,6 +14,7 @@ public class TabMenu extends JPanel {
 
 	
 	public TabMenu(JTabbedPane tabbedPane) {
+		setBackground(new Color(255, 218, 185));
 		setLayout(null);
 		
 		JLabel lblWelcomeToGerman = new JLabel("Welcome to German Vocabulary Trainer!");
@@ -25,15 +28,20 @@ public class TabMenu extends JPanel {
 			tabbedPane.setSelectedIndex(1);
 			}
 		});
-		beginButton.setBounds(149, 181, 89, 23);
+		beginButton.setBounds(149, 181, 117, 23);
 		add(beginButton);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(445, 181, 89, 23);
+		JButton btnNewButton_1 = new JButton("Add words");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			tabbedPane.setSelectedIndex(2);
+			}
+		});
+		btnNewButton_1.setBounds(445, 181, 117, 23);
 		add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(149, 368, 89, 23);
+		JButton btnNewButton_2 = new JButton("Table");
+		btnNewButton_2.setBounds(149, 368, 117, 23);
 		add(btnNewButton_2);
 		
 		JButton aboutButton = new JButton("About");
@@ -42,7 +50,7 @@ public class TabMenu extends JPanel {
 			tabbedPane.setSelectedIndex(3);
 			}
 		});
-		aboutButton.setBounds(445, 368, 89, 23);
+		aboutButton.setBounds(445, 368, 117, 23);
 		add(aboutButton);
 
 	}

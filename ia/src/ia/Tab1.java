@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
@@ -22,7 +23,7 @@ public class Tab1 extends JPanel {
 	Entry entry;
 
 	public Tab1(JTabbedPane tabbedPane) {
-		setBackground(new Color(255, 160, 122));
+		setBackground(new Color(255, 218, 185));
 
 		entryField = new JTextField();
 		entryField.setBounds(212, 226, 446, 28);
@@ -82,7 +83,7 @@ public class Tab1 extends JPanel {
 				entryField.setText("");
 				entry = Ia.dictionary.nextAcro();
 				if (entry == null) {
-					System.out.println("The quiz is over!");
+					JOptionPane.showMessageDialog(null, "The quiz is over!");
 				} else {
 					myLabel.setText(Ia.dictionary.getCurrentEntry().getAcronym());
 					ansLabel.setText("");
