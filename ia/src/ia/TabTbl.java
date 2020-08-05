@@ -52,8 +52,8 @@ public class TabTbl extends DefaultTableModel {
 			e.printStackTrace();
 		}
 	}
-	public void add(String itemname, int quantity, String type, String date ) {
-		addRow(new Object[] {itemname,quantity,type,date});
+	public void add(String wordG, String wordEN ) {
+		addRow(new Object[] {wordG,wordEN});
 	}
 
 	public void deleteSelectedRowFromJtable(int row) {
@@ -65,3 +65,4 @@ public class TabTbl extends DefaultTableModel {
 		}
 	}
 }
+

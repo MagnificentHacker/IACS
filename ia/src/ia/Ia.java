@@ -14,7 +14,6 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
-import practiceia2.TableData;
 
 public class Ia extends JFrame  {
 
