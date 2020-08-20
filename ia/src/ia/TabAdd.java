@@ -18,7 +18,7 @@ public class TabAdd extends JPanel {
 	JLabel myLabel;
 	JLabel ansLabel;
 	
-	public TabAdd(JTabbedPane tabbedPane) {
+	public TabAdd(JTabbedPane tabbedPane, TabTbl tableData) {
 		setBackground(new Color(255, 218, 185));
 		setLayout(null);
 
@@ -39,6 +39,7 @@ public class TabAdd extends JPanel {
 				String englishText = englishTF.getText();
 				Entry entry = new Entry (germanText, englishText);
 				Ia.dictionary.add(entry);
+				tableData.add(germanTF.getText(),englishTF.getText());
 				JOptionPane.showMessageDialog(null, "Word is added");
 				englishTF.setText("");
 				germanTF.setText("");

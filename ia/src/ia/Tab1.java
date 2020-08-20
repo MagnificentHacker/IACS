@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -22,7 +23,7 @@ public class Tab1 extends JPanel {
 	JTextArea textarea;
 	Entry entry;
 
-	public Tab1(JTabbedPane tabbedPane) {
+	public Tab1(JTabbedPane tabbedPane, TabTbl tableData) {
 		setBackground(new Color(255, 218, 185));
 
 		entryField = new JTextField();
@@ -88,6 +89,21 @@ public class Tab1 extends JPanel {
 					myLabel.setText(Ia.dictionary.getCurrentEntry().getAcronym());
 					ansLabel.setText("");
 				}
+			}
+		});
+	
+		btnTable.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				tabbedPane.setSelectedIndex(4);
+			}
+		});
+		
+		finishPr.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Thank you, enjoy your day!");
+				System.exit(0);
 			}
 		});
 	}

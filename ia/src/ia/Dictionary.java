@@ -15,7 +15,7 @@ public class Dictionary {
 
 
 	Dictionary() {
-		Path path = Paths.get("C:\\Users\\maxim\\Desktop\\dictonary.txt");
+		Path path = Paths.get("/Users/mx4112/Desktop/dictonary.txt");
 
 		String text = null;
 
