@@ -52,7 +52,7 @@ public class Ia extends JFrame  {
 		TabAdd tabAdd = new TabAdd(tabbedPane, tableData);
 		TabAbout tabAbt = new TabAbout(tabbedPane);
 		TabTable tabTbl = new TabTable(tabbedPane, tableData, tableData);
-		
+		System.out.println("Test");
 		
 		tabbedPane.addTab("Menu",tabmenu);
 		tabbedPane.addTab("Vocab",tab1);
