@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -11,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import java.awt.Font;
+import javax.swing.JComboBox;
 
 public class TabAdd extends JPanel {
 	private JTextField germanTF;
@@ -23,7 +25,7 @@ public class TabAdd extends JPanel {
 		setLayout(null);
 
 		germanTF = new JTextField();
-		germanTF.setBounds(77, 201, 130, 26);
+		germanTF.setBounds(257, 201, 130, 26);
 		add(germanTF);
 		germanTF.setColumns(10);
 
@@ -32,14 +34,26 @@ public class TabAdd extends JPanel {
 		add(englishTF);
 		englishTF.setColumns(10);
 
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		comboBox.setModel(new DefaultComboBoxModel(ArticleType.values()));
+		comboBox.setBounds(77, 203, 85, 22);
+		add(comboBox);
+		
+		JLabel articleLabel = new JLabel("Article");
+		articleLabel.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+		articleLabel.setBounds(77, 168, 85, 30);
+		add(articleLabel);
+		
 		JButton btnNewButton = new JButton("Add");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Object article = comboBox.getSelectedItem();
 				String germanText = germanTF.getText();
 				String englishText = englishTF.getText();
 				Entry entry = new Entry (germanText, englishText);
 				Ia.dictionary.add(entry);
-				tableData.add(germanTF.getText(),englishTF.getText());
+				tableData.add(article.toString(),germanTF.getText(),englishTF.getText());
 				JOptionPane.showMessageDialog(null, "Word is added");
 				englishTF.setText("");
 				germanTF.setText("");
@@ -48,37 +62,39 @@ public class TabAdd extends JPanel {
 		btnNewButton.setBounds(313, 398, 97, 26);
 		add(btnNewButton);
 		
-		JLabel lblGerman = new JLabel("German");
-		lblGerman.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-		lblGerman.setBounds(77, 164, 117, 38);
-		add(lblGerman);
+		JLabel germanLabel = new JLabel("German");
+		germanLabel.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+		germanLabel.setBounds(257, 164, 117, 38);
+		add(germanLabel);
 		
-		JLabel lblEnglish = new JLabel("English");
-		lblEnglish.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-		lblEnglish.setBounds(529, 169, 130, 29);
-		add(lblEnglish);
+		JLabel englishLabel = new JLabel("English");
+		englishLabel.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+		englishLabel.setBounds(529, 169, 130, 29);
+		add(englishLabel);
 		
-		JLabel lblAddingWordsSection = new JLabel("Adding words section");
-		lblAddingWordsSection.setFont(new Font("Times New Roman", Font.PLAIN, 40));
-		lblAddingWordsSection.setBounds(195, 39, 381, 71);
-		add(lblAddingWordsSection);
+		JLabel addingWordSection = new JLabel("Adding words section");
+		addingWordSection.setFont(new Font("Times New Roman", Font.PLAIN, 40));
+		addingWordSection.setBounds(195, 39, 381, 71);
+		add(addingWordSection);
 		
-		JButton btnBackToMenu = new JButton("Back to menu");
-		btnBackToMenu.addActionListener(new ActionListener() {
+		JButton backToMenuBT = new JButton("Back to menu");
+		backToMenuBT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(0);
 			}
 		});
-		btnBackToMenu.setBounds(77, 400, 117, 23);
-		add(btnBackToMenu);
+		backToMenuBT.setBounds(77, 400, 117, 23);
+		add(backToMenuBT);
 		
-		JButton btnDoSomePractice = new JButton("Do some practice!");
-		btnDoSomePractice.addActionListener(new ActionListener() {
+		JButton doPraticeBT = new JButton("Do some practice!");
+		doPraticeBT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(1);
 			}
 		});
-		btnDoSomePractice.setBounds(529, 400, 157, 23);
-		add(btnDoSomePractice);
+		doPraticeBT.setBounds(529, 400, 157, 23);
+		add(doPraticeBT);
+		
+	
 	}
 }

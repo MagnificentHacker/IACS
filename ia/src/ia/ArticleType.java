@@ -1,5 +1,5 @@
 package ia;
 
 public enum ArticleType {
-	DER,DIE,DAS;
+	DER,DIE,DAS,NO;
 }
