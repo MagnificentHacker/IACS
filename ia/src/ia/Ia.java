@@ -47,7 +47,7 @@ public class Ia extends JFrame  {
 	
 		TabTbl tableData = new TabTbl();
 		
-		TabMenu tabmenu = new TabMenu(tabbedPane);
+		TabMenu tabmenu = new TabMenu(tabbedPane, tableData);
 		Tab1 tab1 = new Tab1(tabbedPane, tableData);
 		TabAdd tabAdd = new TabAdd(tabbedPane, tableData);
 		TabAbout tabAbt = new TabAbout(tabbedPane);

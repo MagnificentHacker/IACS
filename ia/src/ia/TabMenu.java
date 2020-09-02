@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 public class TabMenu extends JPanel {
 
 	
-	public TabMenu(JTabbedPane tabbedPane) {
+	public TabMenu(JTabbedPane tabbedPane, TabTbl tableData) {
 		setBackground(new Color(255, 218, 185));
 		setLayout(null);
 		
@@ -43,6 +43,26 @@ public class TabMenu extends JPanel {
 		JButton btnNewButton_2 = new JButton("Table");
 		btnNewButton_2.setBounds(149, 368, 117, 23);
 		add(btnNewButton_2);
+		
+		JButton saveButton = new JButton("load");
+		saveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tableData.loadData("\\\\NAEWAWWLIFIL01\\Students\\maxim_mitsenko\\Desktop\\dictionary.txt");
+			}
+		});
+		saveButton.setBounds(445, 270, 117, 23);
+		add(saveButton);
+		
+		JButton loadButton = new JButton("save");
+		loadButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			tableData.saveData("\\\\NAEWAWWLIFIL01\\Students\\maxim_mitsenko\\Desktop\\dictionary.txt");
+			}
+		});
+		
+		loadButton.setBounds(149, 270, 117, 23);
+		add(loadButton);
+		
 		
 		JButton aboutButton = new JButton("About");
 		aboutButton.addActionListener(new ActionListener() {

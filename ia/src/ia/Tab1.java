@@ -30,6 +30,7 @@ public class Tab1 extends JPanel {
 		entryField.setBounds(212, 226, 446, 28);
 		this.add(entryField);
 		entryField.setColumns(10);
+		
 
 		JButton confirmb = new JButton("Confirm");
 		confirmb.setBounds(361, 310, 89, 23);
@@ -43,6 +44,12 @@ public class Tab1 extends JPanel {
 		ansLabel.setBounds(215, 91, 425, 38);
 		this.add(ansLabel);
 		ansLabel.setFont(new Font("Times New Roman", Font.PLAIN, 26));
+		
+		JLabel artAnsLabel = new JLabel();
+		artAnsLabel.setBounds(152,109, 446, 176);
+		this.add(artAnsLabel);
+		artAnsLabel.setFont(new Font("Times New Roman", Font.PLAIN, 26));
+		
 
 		JButton btnTable = new JButton("Table");
 		btnTable.setBounds(255, 400, 89, 23);
