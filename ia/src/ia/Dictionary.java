@@ -12,10 +12,9 @@ public class Dictionary {
 	Entry[] entries = new Entry[100];
 	int numEntries = 0;
 	int nextIndex = 0;
-
+	public static final Path path = Paths.get("\\Users\\maxim\\OneDrive - Nord Anglia Education\\NAE - Files\\Desktop\\dictonary.txt");
 
 	Dictionary() {
-		Path path = Paths.get("\\\\NAEWAWWLIFIL01\\Students\\maxim_mitsenko\\Desktop\\dictionary.txt");
 
 		String text = null;
 

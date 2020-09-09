@@ -47,7 +47,7 @@ public class TabMenu extends JPanel {
 		JButton saveButton = new JButton("load");
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tableData.loadData("\\\\NAEWAWWLIFIL01\\Students\\maxim_mitsenko\\Desktop\\dictionary.txt");
+				tableData.loadData();
 			}
 		});
 		saveButton.setBounds(445, 270, 117, 23);
@@ -56,7 +56,7 @@ public class TabMenu extends JPanel {
 		JButton loadButton = new JButton("save");
 		loadButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			tableData.saveData("\\\\NAEWAWWLIFIL01\\Students\\maxim_mitsenko\\Desktop\\dictionary.txt");
+			tableData.saveData();
 			}
 		});
 		

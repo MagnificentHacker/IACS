@@ -1,5 +1,6 @@
 package ia;
 
+import java.util.List;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,38 +22,44 @@ public class TabTbl extends DefaultTableModel {
 	TabTbl() {
 		super(tableHeadings,0);
 	}
-	public void saveData(String filename) {
+	public void saveData() {
 		Gson gson = new Gson();
 		Vector dataVector = this.getDataVector();
 		String textData = gson.toJson(dataVector);
 		System.out.println(textData);
 		System.out.println("Data saved");
 
-		Path path = Paths.get(filename);
+
 		try {
-			Files.writeString(path, textData);
+			Files.writeString(Dictionary.path, textData);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void loadData (String filename) {
-		Path path = Paths.get(filename);
+	public void loadData () {
+
 		try {
-			String textData = Files.readString(path);
+			String textData = Files.readString(Dictionary.path);
 			System.out.println(textData);
 			System.out.println("Data loaded");
 
 
 			Gson gson = new Gson();
-			Object[][] tableData = gson.fromJson(textData, Object[][].class);
-			this.setDataVector(tableData, tableHeadings);
+			List tableData = gson.fromJson(textData, List.class);
+			this.setRowCount(0);
+			for(Object rowData : tableData) {
+				this.addRow(new Vector((List)rowData));
+			}
 			System.out.println(tableData);
 			this.fireTableDataChanged();
-		} catch (IOException e) {
+
+
+		}catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
+
 	public void add(String article, String wordG, String wordEN ) {
 		addRow(new Object[] {article,wordG,wordEN});
 	}
