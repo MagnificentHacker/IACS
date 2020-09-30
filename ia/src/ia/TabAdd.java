@@ -49,10 +49,6 @@ public class TabAdd extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object article = comboBox.getSelectedItem();
-				String germanText = germanTF.getText();
-				String englishText = englishTF.getText();
-				Entry entry = new Entry (germanText, englishText);
-				Ia.dictionary.add(entry);
 				tableData.add(article.toString(),germanTF.getText(),englishTF.getText());
 				JOptionPane.showMessageDialog(null, "Word is added");
 				englishTF.setText("");

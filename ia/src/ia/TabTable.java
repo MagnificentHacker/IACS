@@ -6,7 +6,6 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
-import javax.swing.RowFilter.Entry;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.TableUI;
@@ -16,13 +15,14 @@ import javax.swing.table.TableRowSorter;
 public class TabTable extends JPanel {
 
 	private JTextField filterTB;
-		
+	private JTable table = new JTable();	
+	private TabTbl tableData;
+	
 	public TabTable(JTabbedPane tabbedPane, TabTbl tableData, DefaultTableModel model ) {
-
+		this.tableData = tableData;
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(20, 41, 734, 211);
 		add(scrollPane);
-		JTable table = new JTable();
 		scrollPane.setViewportView(table);
 		table.setModel(tableData);
 
@@ -61,5 +61,8 @@ public class TabTable extends JPanel {
 		});
 
 	}
-
+	public Entry getCurrentEntry() {
+		int selectedRow = table.getSelectedRow();
+		return tableData.getEntry(selectedRow);
+	}
 }

@@ -31,7 +31,6 @@ public class Tab1 extends JPanel {
 		this.add(entryField);
 		entryField.setColumns(10);
 		
-
 		JButton confirmb = new JButton("Confirm");
 		confirmb.setBounds(361, 310, 89, 23);
 		this.add(confirmb);
@@ -63,7 +62,8 @@ public class Tab1 extends JPanel {
 		nextQ.setBounds(600, 400, 175, 23);
 		this.add(nextQ);
 
-		myLabel = new JLabel(Ia.dictionary.getCurrentEntry().getAcronym());
+		entry = tableData.getEntry(-1);
+		myLabel = new JLabel(entry.getGerman());
 		myLabel.setFont(new Font("Times New Roman", Font.PLAIN, 36));
 		myLabel.setLocation(212,109);
 		myLabel.setSize(446,176);
@@ -73,14 +73,13 @@ public class Tab1 extends JPanel {
 		confirmb.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Entry entry = Ia.dictionary.getCurrentEntry();
 				String userAns = entryField.getText();
-				if(Ia.dictionary.getCurrentEntry().getAnswer().contentEquals(userAns)) {
+				if(entry.getEnglish().contentEquals(userAns)) {
 					ansLabel.setText("correct");
 				} else {
 					ansLabel.setText("incorrect");
-					ansLabel.setText("Correct answer:" + Ia.dictionary.getCurrentEntry().getAnswer());
-					System.out.println(Ia.dictionary.getCurrentEntry().getAnswer() + "." + userAns);
+					ansLabel.setText("Correct answer:" + entry.getEnglish());
+					System.out.println(entry.getEnglish() + "." + userAns);
 				} 
 			}
 		});
@@ -89,11 +88,11 @@ public class Tab1 extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				entryField.setText("");
-				entry = Ia.dictionary.nextAcro();
+				String german = entry.getGerman();
 				if (entry == null) {
 					JOptionPane.showMessageDialog(null, "The quiz is over!");
 				} else {
-					myLabel.setText(Ia.dictionary.getCurrentEntry().getAcronym());
+					myLabel.setText(german);
 					ansLabel.setText("");
 				}
 			}
@@ -114,5 +113,4 @@ public class Tab1 extends JPanel {
 			}
 		});
 	}
-
 }

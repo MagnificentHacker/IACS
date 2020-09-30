@@ -18,7 +18,7 @@ public class TabTbl extends DefaultTableModel {
 
 	static final Object[] tableHeadings = new Object[] 
 			{"Article" , "German word", "English word"};
-
+	public static final Path dataPath = Paths.get("\\\\NAEWAWWLIFIL01\\Students\\maxim_mitsenko\\Desktop\\dictionary.txt"); 
 	TabTbl() {
 		super(tableHeadings,0);
 	}
@@ -31,7 +31,7 @@ public class TabTbl extends DefaultTableModel {
 
 
 		try {
-			Files.writeString(Dictionary.path, textData);
+			Files.write(dataPath, textData.getBytes());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -40,7 +40,7 @@ public class TabTbl extends DefaultTableModel {
 	public void loadData () {
 
 		try {
-			String textData = Files.readString(Dictionary.path);
+			String textData = new String(Files.readAllBytes(dataPath));
 			System.out.println(textData);
 			System.out.println("Data loaded");
 
@@ -71,6 +71,15 @@ public class TabTbl extends DefaultTableModel {
 		} else {
 			JOptionPane.showMessageDialog(null,"Unable To Delete", "Error", JOptionPane.ERROR_MESSAGE);
 		}
+	}
+	public Entry getEntry(int row) {
+		if (row < 0) {
+			return new Entry (article, german, english);
+		}
+		String article = this.getValueAt(row, 0).toString();
+		String german = this.getValueAt(row, 1).toString();
+		String english = this.getValueAt(row, 2).toString();
+		return new Entry(article, german, english);
 	}
 }
 

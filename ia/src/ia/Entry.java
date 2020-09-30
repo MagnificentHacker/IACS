@@ -1,21 +1,26 @@
 package ia;
 
 public class Entry {
-	String acronym;
-	String answer;
+	String article;
+	String german;
+	String english;
 	
 	
-	Entry(String acronym, String answer){
-		this.acronym = acronym;
-		this.answer = answer;
+	Entry(String article, String german, String english){
+		this.article = article;
+		this.german = german;
+		this.english = english;
 	}
 	
-	
-	public String getAcronym() {
-		return this.acronym;
+	public String getArticle() {
+		return this.article;
 	}
 	
-	public String getAnswer() {
-		return this.answer;
+	public String getGerman() {
+		return this.german;
+	}
+	
+	public String getEnglish() {
+		return this.english;
 	}
 }

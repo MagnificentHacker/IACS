@@ -16,8 +16,6 @@ import javax.swing.border.EmptyBorder;
 
 
 public class Ia extends JFrame  {
-
-	public static Dictionary dictionary = new Dictionary();
 	private final JTabbedPane pane = new JTabbedPane();
 	JTextField word;
 	static JPanel contentPane;
