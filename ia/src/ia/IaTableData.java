@@ -14,12 +14,12 @@ import javax.swing.table.DefaultTableModel;
 
 import com.google.gson.Gson;
 
-public class TabTbl extends DefaultTableModel {
+public class IaTableData extends DefaultTableModel {
 
 	static final Object[] tableHeadings = new Object[] 
 			{"Article" , "German word", "English word"};
 	public static final Path dataPath = Paths.get("\\\\NAEWAWWLIFIL01\\Students\\maxim_mitsenko\\Desktop\\dictionary.txt"); 
-	TabTbl() {
+	IaTableData() {
 		super(tableHeadings,0);
 	}
 	public void saveData() {
@@ -73,8 +73,9 @@ public class TabTbl extends DefaultTableModel {
 		}
 	}
 	public Entry getEntry(int row) {
+		System.out.println(row);
 		if (row < 0) {
-			return new Entry (article, german, english);
+			return new Entry ("", "", "");
 		}
 		String article = this.getValueAt(row, 0).toString();
 		String german = this.getValueAt(row, 1).toString();

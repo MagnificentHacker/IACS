@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 public class TabMenu extends JPanel {
 
 	
-	public TabMenu(JTabbedPane tabbedPane, TabTbl tableData) {
+	public TabMenu(JTabbedPane tabbedPane, IaTableData tableData) {
 		setBackground(new Color(255, 218, 185));
 		setLayout(null);
 		

@@ -20,7 +20,7 @@ public class TabAdd extends JPanel {
 	JLabel myLabel;
 	JLabel ansLabel;
 	
-	public TabAdd(JTabbedPane tabbedPane, TabTbl tableData) {
+	public TabAdd(JTabbedPane tabbedPane, IaTableData tableData) {
 		setBackground(new Color(255, 218, 185));
 		setLayout(null);
 

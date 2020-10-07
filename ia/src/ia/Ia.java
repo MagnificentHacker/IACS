@@ -43,13 +43,12 @@ public class Ia extends JFrame  {
 		setVisible(true);
 		tabbedPane.setBackground(new Color(255, 218, 185));
 	
-		TabTbl tableData = new TabTbl();
-		
-		TabMenu tabmenu = new TabMenu(tabbedPane, tableData);
-		Tab1 tab1 = new Tab1(tabbedPane, tableData);
+		IaTableData tableData = new IaTableData();
 		TabAdd tabAdd = new TabAdd(tabbedPane, tableData);
 		TabAbout tabAbt = new TabAbout(tabbedPane);
 		TabTable tabTbl = new TabTable(tabbedPane, tableData, tableData);
+		TabMenu tabmenu = new TabMenu(tabbedPane, tableData);
+		TabQuiz tab1 = new TabQuiz(tabbedPane, tabTbl);
 		
 		
 		tabbedPane.addTab("Menu",tabmenu);

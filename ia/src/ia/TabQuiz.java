@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.awt.Color;
 
-public class Tab1 extends JPanel {
+public class TabQuiz extends JPanel {
 
 
 	JTextField entryField;
@@ -23,14 +23,14 @@ public class Tab1 extends JPanel {
 	JTextArea textarea;
 	Entry entry;
 
-	public Tab1(JTabbedPane tabbedPane, TabTbl tableData) {
+	public TabQuiz(JTabbedPane tabbedPane, TabTable tabTbl) {
 		setBackground(new Color(255, 218, 185));
 
 		entryField = new JTextField();
 		entryField.setBounds(212, 226, 446, 28);
 		this.add(entryField);
 		entryField.setColumns(10);
-		
+
 		JButton confirmb = new JButton("Confirm");
 		confirmb.setBounds(361, 310, 89, 23);
 		this.add(confirmb);
@@ -43,12 +43,12 @@ public class Tab1 extends JPanel {
 		ansLabel.setBounds(215, 91, 425, 38);
 		this.add(ansLabel);
 		ansLabel.setFont(new Font("Times New Roman", Font.PLAIN, 26));
-		
+
 		JLabel artAnsLabel = new JLabel();
 		artAnsLabel.setBounds(152,109, 446, 176);
 		this.add(artAnsLabel);
 		artAnsLabel.setFont(new Font("Times New Roman", Font.PLAIN, 26));
-		
+
 
 		JButton btnTable = new JButton("Table");
 		btnTable.setBounds(255, 400, 89, 23);
@@ -62,7 +62,7 @@ public class Tab1 extends JPanel {
 		nextQ.setBounds(600, 400, 175, 23);
 		this.add(nextQ);
 
-		entry = tableData.getEntry(-1);
+		entry = tabTbl.getCurrentEntry();
 		myLabel = new JLabel(entry.getGerman());
 		myLabel.setFont(new Font("Times New Roman", Font.PLAIN, 36));
 		myLabel.setLocation(212,109);
@@ -88,6 +88,7 @@ public class Tab1 extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				entryField.setText("");
+				entry = tabTbl.getCurrentEntry();
 				String german = entry.getGerman();
 				if (entry == null) {
 					JOptionPane.showMessageDialog(null, "The quiz is over!");
@@ -97,14 +98,14 @@ public class Tab1 extends JPanel {
 				}
 			}
 		});
-	
+
 		btnTable.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				tabbedPane.setSelectedIndex(4);
 			}
 		});
-		
+
 		finishPr.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

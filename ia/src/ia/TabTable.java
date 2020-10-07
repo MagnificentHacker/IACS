@@ -16,9 +16,9 @@ public class TabTable extends JPanel {
 
 	private JTextField filterTB;
 	private JTable table = new JTable();	
-	private TabTbl tableData;
+	private IaTableData tableData;
 	
-	public TabTable(JTabbedPane tabbedPane, TabTbl tableData, DefaultTableModel model ) {
+	public TabTable(JTabbedPane tabbedPane, IaTableData tableData, DefaultTableModel model ) {
 		this.tableData = tableData;
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(20, 41, 734, 211);
