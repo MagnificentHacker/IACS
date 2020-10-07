@@ -88,7 +88,7 @@ public class TabQuiz extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				entryField.setText("");
-				entry = tabTbl.getCurrentEntry();
+				entry = tabTbl.nextEntry();
 				String german = entry.getGerman();
 				if (entry == null) {
 					JOptionPane.showMessageDialog(null, "The quiz is over!");

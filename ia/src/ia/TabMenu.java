@@ -31,37 +31,42 @@ public class TabMenu extends JPanel {
 		beginButton.setBounds(149, 181, 117, 23);
 		add(beginButton);
 		
-		JButton btnNewButton_1 = new JButton("Add words");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton addWordBTN = new JButton("Add words");
+		addWordBTN.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			tabbedPane.setSelectedIndex(2);
 			}
 		});
-		btnNewButton_1.setBounds(445, 181, 117, 23);
-		add(btnNewButton_1);
+		addWordBTN.setBounds(445, 181, 117, 23);
+		add(addWordBTN);
 		
-		JButton btnNewButton_2 = new JButton("Table");
-		btnNewButton_2.setBounds(149, 368, 117, 23);
-		add(btnNewButton_2);
+		JButton tableBTN = new JButton("Table");
+		tableBTN.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(4);
+			}
+		});
+		tableBTN.setBounds(149, 368, 117, 23);
+		add(tableBTN);
 		
-		JButton saveButton = new JButton("load");
-		saveButton.addActionListener(new ActionListener() {
+		JButton loadBTN = new JButton("load");
+		loadBTN.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tableData.loadData();
 			}
 		});
-		saveButton.setBounds(445, 270, 117, 23);
-		add(saveButton);
+		loadBTN.setBounds(445, 270, 117, 23);
+		add(loadBTN);
 		
-		JButton loadButton = new JButton("save");
-		loadButton.addActionListener(new ActionListener() {
+		JButton saveBTN = new JButton("save");
+		saveBTN.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			tableData.saveData();
 			}
 		});
 		
-		loadButton.setBounds(149, 270, 117, 23);
-		add(loadButton);
+		saveBTN.setBounds(149, 270, 117, 23);
+		add(saveBTN);
 		
 		
 		JButton aboutButton = new JButton("About");

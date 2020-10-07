@@ -1,5 +1,7 @@
 package ia;
 
+import java.awt.Color;
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -17,8 +19,10 @@ public class TabTable extends JPanel {
 	private JTextField filterTB;
 	private JTable table = new JTable();	
 	private IaTableData tableData;
-	
+
 	public TabTable(JTabbedPane tabbedPane, IaTableData tableData, DefaultTableModel model ) {
+		setBackground(new Color(255, 218, 185));
+
 		this.tableData = tableData;
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(20, 41, 734, 211);
@@ -29,40 +33,17 @@ public class TabTable extends JPanel {
 		TableRowSorter sorter = new TableRowSorter(tableData);
 		table.setRowSorter(sorter);
 
-
-		filterTB = new JTextField();
-		filterTB.setBounds(76, 10, 532, 20);
-		add(filterTB);
-		filterTB.setColumns(10);
-
-		filterTB.getDocument().addDocumentListener(new DocumentListener() {
-
-			@Override
-			public void insertUpdate(DocumentEvent e) {	
-				model.fireTableDataChanged();
-			}
-			@Override
-			public void removeUpdate(DocumentEvent e) {
-				model.fireTableDataChanged();
-			}
-			@Override
-			public void changedUpdate(DocumentEvent e) {	
-				model.fireTableDataChanged();
-			}
-		});
-
-		sorter.setRowFilter(new RowFilter() {
-			@Override
-			public boolean include(Entry entry) {
-				String name = entry.getValue(0).toString();
-				String searchText = filterTB.getText();
-				return name.startsWith(searchText);
-			}
-		});
-
+		tabbedPane.setBackground(new Color(255, 218, 185));
 	}
 	public Entry getCurrentEntry() {
 		int selectedRow = table.getSelectedRow();
 		return tableData.getEntry(selectedRow);
+	}
+	public Entry nextEntry() {
+		int selectedRow = table.getSelectedRow();
+		selectedRow += 1;
+		table.getSelectionModel().setSelectionInterval(selectedRow, selectedRow);
+		return tableData.getEntry(selectedRow);
+		
 	}
 }
