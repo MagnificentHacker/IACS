@@ -16,7 +16,6 @@ import javax.swing.table.TableRowSorter;
 
 public class TabTable extends JPanel {
 
-	private JTextField filterTB;
 	private JTable table = new JTable();	
 	private IaTableData tableData;
 
@@ -42,8 +41,10 @@ public class TabTable extends JPanel {
 	public Entry nextEntry() {
 		int selectedRow = table.getSelectedRow();
 		selectedRow += 1;
+		if(selectedRow >= table.getRowCount()) {
+			selectedRow = 0;
+		}
 		table.getSelectionModel().setSelectionInterval(selectedRow, selectedRow);
 		return tableData.getEntry(selectedRow);
-		
 	}
 }
