@@ -18,7 +18,7 @@ public class IaTableData extends DefaultTableModel {
 
 	static final Object[] tableHeadings = new Object[] 
 			{"Article" , "German word", "English word"};
-	public static final Path dataPath = Paths.get("\\\\NAEWAWWLIFIL01\\Students\\maxim_mitsenko\\Desktop\\dictionary.txt"); 
+	public static final Path dataPath = Paths.get("C:\\Users\\maxim\\OneDrive - Nord Anglia Education\\NAE - Files\\Desktop\\dictonary.txt"); 
 	IaTableData() {
 		super(tableHeadings,0);
 	}

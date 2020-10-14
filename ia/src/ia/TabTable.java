@@ -13,6 +13,9 @@ import javax.swing.event.DocumentListener;
 import javax.swing.plaf.TableUI;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TabTable extends JPanel {
 
@@ -23,14 +26,42 @@ public class TabTable extends JPanel {
 		setBackground(new Color(255, 218, 185));
 
 		this.tableData = tableData;
+		setLayout(null);
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(20, 41, 734, 211);
+		scrollPane.setBounds(238, 5, 452, 402);
 		add(scrollPane);
 		scrollPane.setViewportView(table);
 		table.setModel(tableData);
 
 		TableRowSorter sorter = new TableRowSorter(tableData);
 		table.setRowSorter(sorter);
+		
+		JButton backToMenuBT = new JButton("Back to Menu");
+		backToMenuBT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(0);
+			}
+		});
+		backToMenuBT.setBounds(95, 366, 129, 23);
+		add(backToMenuBT);
+		
+		JButton backToPracticeBT = new JButton("Back to Practice");
+		backToPracticeBT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(2);
+			}
+		});
+		backToPracticeBT.setBounds(95, 335, 129, 23);
+		add(backToPracticeBT);
+		
+		JButton removeLineBT = new JButton("Remove line");
+		removeLineBT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		removeLineBT.setBounds(95, 301, 129, 23);
+		add(removeLineBT);
 
 		tabbedPane.setBackground(new Color(255, 218, 185));
 	}
