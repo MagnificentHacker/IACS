@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Vector;
 
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -18,11 +19,10 @@ public class IaTableData extends DefaultTableModel {
 
 	static final Object[] tableHeadings = new Object[] 
 			{"Article" , "German word", "English word"};
-	public static final Path dataPath = Paths.get("C:\\Users\\maxim\\OneDrive - Nord Anglia Education\\NAE - Files\\Desktop\\dictonary.txt"); 
 	IaTableData() {
 		super(tableHeadings,0);
 	}
-	public void saveData() {
+	public void saveData(Path dataPath) {
 		Gson gson = new Gson();
 		Vector dataVector = this.getDataVector();
 		String textData = gson.toJson(dataVector);
@@ -37,8 +37,7 @@ public class IaTableData extends DefaultTableModel {
 		}
 	}
 
-	public void loadData () {
-
+	public void loadData (Path dataPath) {
 		try {
 			String textData = new String(Files.readAllBytes(dataPath));
 			System.out.println(textData);
