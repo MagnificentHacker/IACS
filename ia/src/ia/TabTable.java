@@ -14,6 +14,8 @@ import javax.swing.plaf.TableUI;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -57,7 +59,8 @@ public class TabTable extends JPanel {
 		JButton removeLineBT = new JButton("Remove line");
 		removeLineBT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+			model.removeRow(table.getSelectedRow());
+			JOptionPane.showMessageDialog(null, "Selected row deleted successfully");
 			}
 		});
 		removeLineBT.setBounds(95, 301, 129, 23);

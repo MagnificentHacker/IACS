@@ -92,10 +92,5 @@ public class TabMenu extends JPanel {
 		});
 		aboutButton.setBounds(445, 350, 117, 23);
 		add(aboutButton);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(149, 431, 117, 29);
-		add(btnNewButton);
-
 	}
 }
