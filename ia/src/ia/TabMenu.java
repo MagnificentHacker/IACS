@@ -53,7 +53,7 @@ public class TabMenu extends JPanel {
 		tableBTN.setBounds(149, 350, 117, 23);
 		add(tableBTN);
 
-		JButton loadBTN = new JButton("load");
+		JButton loadBTN = new JButton("Load");
 		loadBTN.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jfc = new JFileChooser();
@@ -67,7 +67,7 @@ public class TabMenu extends JPanel {
 		loadBTN.setBounds(445, 270, 117, 23);
 		add(loadBTN);
 
-		JButton saveBTN = new JButton("save");
+		JButton saveBTN = new JButton("Save");
 		saveBTN.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jfc = new JFileChooser();
