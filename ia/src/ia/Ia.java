@@ -49,6 +49,8 @@ public class Ia extends JFrame  {
 		TabTable tabTbl = new TabTable(tabbedPane, tableData, tableData);
 		TabMenu tabmenu = new TabMenu(tabbedPane, tableData);
 		TabQuiz tab1 = new TabQuiz(tabbedPane, tabTbl);
+		TabHelp tabHelp = new TabHelp(tabbedPane);
+		TabHelp2 tabHelp2 = new TabHelp2(tabbedPane);
 		
 		
 		tabbedPane.addTab("Menu",tabmenu);
@@ -56,10 +58,14 @@ public class Ia extends JFrame  {
 		tabbedPane.addTab("Add", tabAdd);
 		tabbedPane.addTab("About", tabAbt);
 		tabbedPane.addTab("Table", tabTbl);
+		tabbedPane.addTab("Help", tabHelp);
+		tabbedPane.addTab("Help2", tabHelp2);
 		tab1.setLayout(null);
 		tabmenu.setLayout(null);
 		tabAdd.setLayout(null);
 		tabAbt.setLayout(null);
+		tabHelp.setLayout(null);
+		tabHelp2.setLayout(null);
 		
 	}
 }

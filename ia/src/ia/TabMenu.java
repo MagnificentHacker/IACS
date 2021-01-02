@@ -92,5 +92,14 @@ public class TabMenu extends JPanel {
 		});
 		aboutButton.setBounds(445, 350, 117, 23);
 		add(aboutButton);
+		
+		JButton btnNewButton = new JButton("Help");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(5);
+			}
+		});
+		btnNewButton.setBounds(308, 405, 100, 23);
+		add(btnNewButton);
 	}
 }
