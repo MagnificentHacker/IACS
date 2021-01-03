@@ -35,10 +35,6 @@ public class TabQuiz extends JPanel {
 		confirmb.setBounds(361, 310, 89, 23);
 		this.add(confirmb);
 
-		JButton finishPr = new JButton("Finish practice");
-		finishPr.setBounds(33, 400, 145, 23);
-		this.add(finishPr);
-
 		JLabel ansLabel = new JLabel("");
 		ansLabel.setBounds(215, 91, 425, 38);
 		this.add(ansLabel);
@@ -48,6 +44,18 @@ public class TabQuiz extends JPanel {
 		artAnsLabel.setBounds(152,109, 446, 176);
 		this.add(artAnsLabel);
 		artAnsLabel.setFont(new Font("Times New Roman", Font.PLAIN, 26));
+		
+				JButton finishPr = new JButton("Finish practice");
+				finishPr.setBounds(33, 400, 145, 23);
+				this.add(finishPr);
+				
+						finishPr.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								JOptionPane.showMessageDialog(null, "Thank you, enjoy your day!");
+								System.exit(0);
+							}
+						});
 
 
 		JButton btnTable = new JButton("Table");
@@ -103,14 +111,6 @@ public class TabQuiz extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				tabbedPane.setSelectedIndex(4);
-			}
-		});
-
-		finishPr.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Thank you, enjoy your day!");
-				System.exit(0);
 			}
 		});
 	}
