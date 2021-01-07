@@ -12,12 +12,12 @@ import javax.swing.JTabbedPane;
 
 public class TabHelp extends JPanel {
 
-	
+
 	public TabHelp(JTabbedPane tabbedPane) {
 		setBackground(new Color(255, 218, 185));
-		
+
 		setLayout(null);
-	
+
 		JButton btnReturn = new JButton("Return To Menu");
 		btnReturn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -26,7 +26,7 @@ public class TabHelp extends JPanel {
 		});
 		btnReturn.setBounds(94, 421, 129, 23);
 		add(btnReturn);
-		
+
 		JLabel lblNewLabel = new JLabel("How to use application");
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		lblNewLabel.setBounds(239, 28, 253, 53);
@@ -56,12 +56,12 @@ public class TabHelp extends JPanel {
 		lbl4.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		lbl4.setBounds(55, 220, 670, 21);
 		add(lbl4);
-		
+
 		JLabel lbl5 = new JLabel("5.Enjoy your practice.");
 		lbl5.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		lbl5.setBounds(55, 252, 233, 14);
 		add(lbl5);
-		
+
 		JButton btnNextPage = new JButton("Next Page");
 		btnNextPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -70,18 +70,18 @@ public class TabHelp extends JPanel {
 		});
 		btnNextPage.setBounds(527, 421, 109, 23);
 		add(btnNextPage);
-		
+
 		JLabel lblmakeSureBefore = new JLabel("6.Make sure before you close the application - you save the words.");
 		lblmakeSureBefore.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		lblmakeSureBefore.setBounds(55, 282, 535, 14);
 		add(lblmakeSureBefore);
-		
+
 		JLabel lblWordsAre = new JLabel("! WORDS ARE NOT SAVED AUTOMATICALLY - IT SHOULD BE DONE MANUALLY IN MENU !");
 		lblWordsAre.setBackground(Color.RED);
 		lblWordsAre.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		lblWordsAre.setBounds(26, 367, 718, 14);
 		add(lblWordsAre);
-		
-		
+
+
 	}
 }

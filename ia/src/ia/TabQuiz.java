@@ -44,18 +44,18 @@ public class TabQuiz extends JPanel {
 		artAnsLabel.setBounds(152,109, 446, 176);
 		this.add(artAnsLabel);
 		artAnsLabel.setFont(new Font("Times New Roman", Font.PLAIN, 26));
-		
-				JButton finishPr = new JButton("Finish practice");
-				finishPr.setBounds(33, 400, 145, 23);
-				this.add(finishPr);
-				
-						finishPr.addActionListener(new ActionListener() {
-							@Override
-							public void actionPerformed(ActionEvent arg0) {
-								JOptionPane.showMessageDialog(null, "Thank you, enjoy your day!");
-								System.exit(0);
-							}
-						});
+
+		JButton finishPr = new JButton("Finish practice");
+		finishPr.setBounds(33, 400, 145, 23);
+		this.add(finishPr);
+
+		finishPr.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Thank you, enjoy your day!");
+				System.exit(0);
+			}
+		});
 
 
 		JButton btnTable = new JButton("Table");
@@ -63,6 +63,14 @@ public class TabQuiz extends JPanel {
 		this.add(btnTable);
 
 		JButton btnRevealAnswer = new JButton("Reveal Answer");
+		btnRevealAnswer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String userAns = entryField.getText();
+				if (entry == null) {
+					ansLabel.setText("Correct answer:" + entry.getEnglish());
+				}
+			}
+		});
 		btnRevealAnswer.setBounds(400, 400, 155, 23);
 		this.add(btnRevealAnswer);
 
@@ -83,11 +91,10 @@ public class TabQuiz extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				String userAns = entryField.getText();
 				if(entry.getEnglish().contentEquals(userAns)) {
-					ansLabel.setText("correct");
+					ansLabel.setText("correct!");
 				} else {
-					ansLabel.setText("incorrect");
+					ansLabel.setText("incorrect, try again!");
 					ansLabel.setText("Correct answer:" + entry.getEnglish());
-					System.out.println(entry.getEnglish() + "." + userAns);
 				} 
 			}
 		});
@@ -99,14 +106,13 @@ public class TabQuiz extends JPanel {
 				entry = tabTbl.nextEntry();
 				String german = entry.getGerman();
 				if (entry == null) {
-					JOptionPane.showMessageDialog(null, "The quiz is over!");
+					ansLabel.setText("Correct answer:" + entry.getEnglish());
 				} else {
 					myLabel.setText(german);
 					ansLabel.setText("");
 				}
 			}
 		});
-
 		btnTable.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

@@ -45,8 +45,8 @@ public class TabAdd extends JPanel {
 		articleLabel.setBounds(77, 168, 85, 30);
 		add(articleLabel);
 		
-		JButton btnNewButton = new JButton("Add");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton addButton = new JButton("Add");
+		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object article = comboBox.getSelectedItem();
 				tableData.add(article.toString(),germanTF.getText(),englishTF.getText());
@@ -55,8 +55,8 @@ public class TabAdd extends JPanel {
 				germanTF.setText("");
 			}
 		});
-		btnNewButton.setBounds(313, 398, 97, 26);
-		add(btnNewButton);
+		addButton.setBounds(313, 398, 97, 26);
+		add(addButton);
 		
 		JLabel germanLabel = new JLabel("German");
 		germanLabel.setFont(new Font("Times New Roman", Font.PLAIN, 24));
