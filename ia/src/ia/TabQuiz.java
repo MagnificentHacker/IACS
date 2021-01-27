@@ -66,9 +66,7 @@ public class TabQuiz extends JPanel {
 		btnRevealAnswer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String userAns = entryField.getText();
-				if (entry == null) {
 					ansLabel.setText("Correct answer:" + entry.getEnglish());
-				}
 			}
 		});
 		btnRevealAnswer.setBounds(400, 400, 155, 23);
