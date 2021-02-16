@@ -32,5 +32,5 @@ public class EnhancedTabbedPane extends JTabbedPane {
 	public void setTabsVisible(boolean isVisible) {
 		this.showTabs = isVisible;
 		repaint();
-	}
+		}
 }
