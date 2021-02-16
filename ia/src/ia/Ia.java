@@ -16,7 +16,7 @@ import javax.swing.border.EmptyBorder;
 
 
 public class Ia extends JFrame  {
-	private final JTabbedPane pane = new JTabbedPane();
+	private final EnhancedTabbedPane pane = new EnhancedTabbedPane();
 	JTextField word;
 	static JPanel contentPane;
 

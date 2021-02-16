@@ -50,7 +50,7 @@ public class TabTable extends JPanel {
 		JButton backToPracticeBT = new JButton("Back to Practice");
 		backToPracticeBT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(2);
+				tabbedPane.setSelectedIndex(1);
 			}
 		});
 		backToPracticeBT.setBounds(95, 335, 129, 23);
