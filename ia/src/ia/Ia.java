@@ -37,7 +37,7 @@ public class Ia extends JFrame  {
 		setTitle("German practice vocab");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 822, 528);
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		EnhancedTabbedPane tabbedPane = new EnhancedTabbedPane(EnhancedTabbedPane.TOP);
 		tabbedPane.setBounds(100, 100, 822, 528);
 		getContentPane().add(tabbedPane);
 		setVisible(true);
@@ -66,6 +66,6 @@ public class Ia extends JFrame  {
 		tabAbt.setLayout(null);
 		tabHelp.setLayout(null);
 		tabHelp2.setLayout(null);
-		
+		tabbedPane.setTabsVisible(false);
 	}
 }

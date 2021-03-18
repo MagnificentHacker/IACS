@@ -45,15 +45,14 @@ public class TabQuiz extends JPanel {
 		this.add(artAnsLabel);
 		artAnsLabel.setFont(new Font("Times New Roman", Font.PLAIN, 26));
 
-		JButton finishPr = new JButton("Finish practice");
-		finishPr.setBounds(33, 400, 145, 23);
-		this.add(finishPr);
+		JButton bckBt = new JButton("Back to Menu");
+		bckBt.setBounds(33, 400, 145, 23);
+		this.add(bckBt);
 
-		finishPr.addActionListener(new ActionListener() {
+		bckBt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Thank you, enjoy your day!");
-				System.exit(0);
+				tabbedPane.setSelectedIndex(0);
 			}
 		});
 
